@@ -1,0 +1,89 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #EDF0F2;
+  font-family: 'Roboto', sans-serif; }
+
+div {
+  padding: 0px;
+  margin: 0px; }
+
+i {
+  font-size: 20px;
+  padding: 0px;
+  margin: 5px;
+  cursor: pointer; }
+
+i.favorite {
+  color: #ea4c89; }
+
+i.selected {
+  color: #3A4046; }
+
+#card-player {
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  margin: 30px auto;
+  padding: 0px;
+  background-color: #EDF0F2;
+  box-shadow: 0px 10px 20px 1px #BBB; }
+  #card-player #header {
+    background: url("../img/card-header.jpg");
+    background-repeat: none;
+    background-position: left 30%;
+    width: 100%;
+    height: 150px;
+    border-radius: 20px 20px 0px 0px; }
+  #card-player #body {
+    padding: 10px; }
+    #card-player #body #display {
+      margin-top: 20px;
+      padding: 10px;
+      height: 80px; }
+      #card-player #body #display #info {
+        float: left; }
+        #card-player #body #display #info p {
+          padding: 0px;
+          margin: 5px;
+          color: #3A4046; }
+        #card-player #body #display #info p.title {
+          font-size: 24px;
+          font-weight: 500; }
+        #card-player #body #display #info p.author {
+          font-size: 18px;
+          font-weight: 300; }
+      #card-player #body #display #buttons {
+        color: #9AA2AA;
+        float: right;
+        font-size: 20px; }
+    #card-player #body .progress {
+      height: 14px;
+      border-radius: 30px;
+      margin: 0px 10px 0px 10px;
+      font-size: 12px;
+      text-align: center;
+      color: white;
+      background-color: #3A4046; }
+      #card-player #body .progress .progress-bar {
+        width: 0%;
+        height: 100%;
+        border-radius: 30px;
+        background-color: #9AA2AA; }
+    #card-player #body #player {
+      margin: 20px 10px;
+      font-size: 22px;
+      height: 70px; }
+      #card-player #body #player #main {
+        height: 100%;
+        float: left;
+        color: #3A4046; }
+        #card-player #body #player #main .fa-play-circle, #card-player #body #player #main .fa-pause-circle {
+          font-size: 60px; }
+      #card-player #body #player #others {
+        height: 100%;
+        color: #9AA2AA;
+        float: right; }
+        #card-player #body #player #others i {
+          position: relative;
+          top: 50%; }

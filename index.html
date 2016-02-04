@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,100,100italic,300,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="card-player">
+			<div id="header"></div>
+			<div id="body">
+				<div id="display">
+					<div id="info">
+						<p class="title">Snuff</p>
+						<p class="author">Slipknot</p>
+					</div>
+					<div id="buttons">
+						<i class="fa fa-share-square-o" id="btn_share"></i>
+						<i class="fa fa-heart" id="btn_favorite"></i>
+					</div>
+				</div>
+				<div class="progress">
+					<div class="progress-bar">
+					</div>
+				</div>
+				<div id="player">
+					<audio id="audio-player"></audio>
+					<div id="main">
+						<i class="fa fa-play-circle" id="btn_play_pause"></i>
+						<i class="fa fa-backward" id="btn_previous"></i>
+						<i class="fa fa-forward" id="btn_next"></i>
+					</div>
+					<div id="others">
+						<i class="fa fa-repeat" id="btn_repeat"></i>
+						<i class="fa fa-random" id="btn_random"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script src="bower_components/jPlayer/dist/jplayer/jquery.jplayer.min.js" type="text/javascript"></script>		
+		<script>
+		'use strict';
+
+		$(document).ready(function(){
+			class Player {
+				constructor(){
+					this.audio = document.getElementById('audio-player');
+					this.audio.src = 'mp3/snuff-slipknot.mp3';
+					this.audio.addEventListener('timeupdate', ()=> {
+						var current = (100 * this.audio.currentTime) / this.audio.duration;
+						$('.progress-bar').width(current+'%');
+					});	
+					this.audio.addEventListener('ended', () => {
+						$('#btn_play_pause').removeClass('fa-pause-circle');
+						$('#btn_play_pause').addClass('fa-play-circle');
+						$('.progress-bar').width('0%');
+					});
+				}
+				play(){
+					this.audio.play();
+				}
+				pause(){	
+					this.audio.pause();				
+				}
+			}
+
+			var player = new Player();
+
+			$('#btn_play_pause').on('click', function(e){
+				e.preventDefault();
+				if($(this).hasClass('fa-play-circle')){
+					player.play();
+					$(this).removeClass('fa-play-circle');
+					$(this).addClass('fa-pause-circle');
+				} else {
+					player.pause();
+					$(this).removeClass('fa-pause-circle');
+					$(this).addClass('fa-play-circle');
+				}
+			});
+
+			$('#btn_repeat').on('click', function(e){
+				e.preventDefault();
+				$(this).toggleClass('selected');
+			});
+			$('#btn_random').on('click', function(e){
+				e.preventDefault();
+				$(this).toggleClass('selected');
+			});
+			$('#btn_favorite').on('click', function(e){
+				e.preventDefault();
+				$(this).toggleClass('favorite');
+			});
+		});
+		</script>
+	</body>
+</html>

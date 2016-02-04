@@ -1,0 +1,23 @@
+{
+  "name": "music-player",
+  "authors": [
+    "Felipe Vasconcelos <felipe.vasconcelos@live.com>"
+  ],
+  "description": "Inspired on https://dribbble.com/shots/998479-Music",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.0",
+    "jPlayer": "jplayer#^2.9.2"
+  }
+}
