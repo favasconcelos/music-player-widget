@@ -1,8 +1,5 @@
 ## Music Plater Widget
 Inspired on [Music Player Widget] by [Rovane Durso]
-
-![Widget](https://d13yacurqjgara.cloudfront.net/users/141038/screenshots/998479/music2.png)
-
 Checkout at: [Online Version]
 
 ---
